@@ -203,24 +203,56 @@
 <section class="bg-white py-16">
   <div class="max-w-6xl mx-auto px-4 text-center">
     <h3 class="text-3xl font-bold text-green-800 mb-4">Weekly Subscription Plans 📦</h3>
-    <p class="text-gray-600 mb-8">Best value for regular consumers. Cancel anytime.</p>
+    <p class="text-gray-600 mb-2">Best value for regular consumers. Cancel anytime.</p>
+    <p class="text-sm text-red-600 mb-8">⚠️ Limited weekly slots available</p>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="bg-green-50 p-6 rounded-xl">
         <h4 class="font-semibold text-lg mb-2">Basic</h4>
         <p class="text-sm mb-3">2 × 50g packs / week</p>
         <p class="font-semibold text-green-700">₹480 / month</p>
+        <a href="https://wa.me/919845869352?text=Hi%20Aquila%20Microgreens%2C%20I%20want%20to%20enquire%20about%20the%20Basic%20Subscription" target="_blank" class="inline-block mt-4 bg-green-600 text-white px-4 py-2 rounded-lg text-sm">Enquire</a>
       </div>
+
       <div class="bg-green-100 p-6 rounded-xl border-2 border-green-600">
+        <span class="inline-block mb-2 text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">⭐ Most Popular</span>
         <h4 class="font-semibold text-lg mb-2">Popular</h4>
         <p class="text-sm mb-3">3 × 50g packs / week</p>
         <p class="font-semibold text-green-700">₹690 / month</p>
         <p class="text-xs text-green-800 mt-2">Save up to 20%</p>
+        <a href="https://wa.me/919845869352?text=Hi%20Aquila%20Microgreens%2C%20I%20want%20to%20subscribe%20to%20the%20Popular%20Plan" target="_blank" class="inline-block mt-4 bg-green-700 text-white px-4 py-2 rounded-lg text-sm">Subscribe</a>
       </div>
+
       <div class="bg-green-50 p-6 rounded-xl">
         <h4 class="font-semibold text-lg mb-2">Family</h4>
         <p class="text-sm mb-3">5 × 50g packs / week</p>
         <p class="font-semibold text-green-700">₹1,050 / month</p>
+        <a href="https://wa.me/919845869352?text=Hi%20Aquila%20Microgreens%2C%20I%20want%20to%20enquire%20about%20the%20Family%20Subscription" target="_blank" class="inline-block mt-4 bg-green-600 text-white px-4 py-2 rounded-lg text-sm">Enquire</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="bg-white py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center text-green-800 mb-10">Frequently Asked Questions ❓</h3>
+    <div class="space-y-6 max-w-3xl mx-auto">
+      <div>
+        <h4 class="font-semibold">How long do microgreens stay fresh?</h4>
+        <p class="text-gray-600 mt-1">They stay fresh for 5–7 days when stored refrigerated in airtight boxes.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold">Are your microgreens safe for kids?</h4>
+        <p class="text-gray-600 mt-1">Yes. They are chemical-free and grown in a hygienic indoor environment.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold">Do you deliver every day?</h4>
+        <p class="text-gray-600 mt-1">We harvest on order days and deliver fresh within Whitefield & nearby areas.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold">Can I customise my subscription?</h4>
+        <p class="text-gray-600 mt-1">Yes, subscriptions are flexible and can be customised over WhatsApp.</p>
       </div>
     </div>
   </div>
@@ -308,6 +340,31 @@
       title.classList.remove('text-2xl');
       title.classList.add('text-3xl');
     }
+  });
+</script>
+
+<!-- Footer -->
+<footer class="bg-green-800 text-green-100 py-6">
+  <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p>© 2026 Aquila Microgreens. All rights reserved.</p>
+    <div class="flex gap-4 text-sm">
+      <a href="#about" class="hover:text-white">About</a>
+      <a href="#contact" class="hover:text-white">Contact</a>
+      <a href="https://wa.me/919845869352" target="_blank" class="hover:text-white">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Add order buttons to each microgreen card with auto WhatsApp message
+  document.querySelectorAll('.card').forEach(card => {
+    const name = card.querySelector('h3')?.innerText || 'Microgreens';
+    const btn = document.createElement('a');
+    btn.href = `https://wa.me/919845869352?text=Hi%20Aquila%20Microgreens%2C%20I%20would%20like%20to%20order%20${encodeURIComponent(name)}`;
+    btn.target = '_blank';
+    btn.className = 'inline-block mt-4 text-sm bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition';
+    btn.innerText = 'Order this';
+    card.appendChild(btn);
   });
 </script>
 
