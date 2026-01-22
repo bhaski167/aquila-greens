@@ -83,48 +83,69 @@
   <section id="products" class="bg-gray-50 py-16">
     <!-- Filters -->
     <div class="max-w-6xl mx-auto px-4 mb-10 text-center">
-      <div class="flex flex-wrap justify-center gap-3">
-        <button class="px-4 py-2 text-sm rounded-full bg-green-700 text-white">All</button>
-        <button class="px-4 py-2 text-sm rounded-full bg-green-100 text-green-800">Detox</button>
-        <button class="px-4 py-2 text-sm rounded-full bg-green-100 text-green-800">Immunity</button>
-        <button class="px-4 py-2 text-sm rounded-full bg-green-100 text-green-800">Kids Friendly</button>
-        <button class="px-4 py-2 text-sm rounded-full bg-green-100 text-green-800">Iron Rich</button>
-        <span class="px-4 py-2 text-sm rounded-full bg-green-700 text-white">All</span>
-        <span class="px-4 py-2 text-sm rounded-full bg-green-100 text-green-800">Detox</span>
-        <span class="px-4 py-2 text-sm rounded-full bg-green-100 text-green-800">Immunity</span>
-        <span class="px-4 py-2 text-sm rounded-full bg-green-100 text-green-800">Kids Friendly</span>
-        <span class="px-4 py-2 text-sm rounded-full bg-green-100 text-green-800">Iron Rich</span>
+      <div id="filters" class="flex flex-wrap justify-center gap-3">
+        <button data-filter="all" class="filter-btn px-4 py-2 text-sm rounded-full bg-green-700 text-white">All</button>
+        <button data-filter="detox" class="filter-btn px-4 py-2 text-sm rounded-full bg-green-100 text-green-800">Detox</button>
+        <button data-filter="immunity" class="filter-btn px-4 py-2 text-sm rounded-full bg-green-100 text-green-800">Immunity</button>
+        <button data-filter="kids" class="filter-btn px-4 py-2 text-sm rounded-full bg-green-100 text-green-800">Kids Friendly</button>
+        <button data-filter="iron" class="filter-btn px-4 py-2 text-sm rounded-full bg-green-100 text-green-800">Iron Rich</button>
       </div>
     </div>
     <div class="max-w-6xl mx-auto px-4">
       <h3 class="text-3xl font-bold text-center text-green-800 mb-2">Our Microgreens 🌱</h3>
       <p class="text-center text-gray-600 mb-10">Fresh • Local • Harvested Weekly</p>
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div id="microgreens" class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
         <div class="bg-white p-6 rounded-2xl shadow">
           <span class="inline-block mb-2 text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">⭐ Most Popular</span>
           <h4 class="font-bold text-lg">Wheatgrass</h4>
-          <p class="text-sm mt-2">Perfect for daily juice and detox routines.</p>
+          <p class="text-sm mt-2">Power-packed microgreen widely used for detox, digestion, and daily wellness.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">🌿 Detox</span>
+            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">🧘 Digestion</span>
+            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">👶 Kids Friendly</span>
+          </div>
         </div>
         <div class="bg-white p-6 rounded-2xl shadow">
           <h4 class="font-bold text-lg">Mustard</h4>
-          <p class="text-sm mt-2">Spicy, bold flavour for salads & garnishes.</p>
+          <p class="text-sm mt-2">Bold, spicy microgreens known to boost metabolism and immunity.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">🔥 Metabolism</span>
+            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">🛡️ Immunity</span>
+          </div>
         </div>
         <div class="bg-white p-6 rounded-2xl shadow">
           <span class="inline-block mb-2 text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">❤️ Health Favorite</span>
           <h4 class="font-bold text-lg">Broccoli</h4>
-          <p class="text-sm mt-2">Rich in antioxidants, loved by health-conscious families.</p>
+          <p class="text-sm mt-2">Antioxidant-rich microgreens supporting immunity and cellular health.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">🛡️ Immunity</span>
+            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">🧬 Antioxidants</span>
+            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">👶 Kids Friendly</span>
+          </div>
         </div>
         <div class="bg-white p-6 rounded-2xl shadow">
           <h4 class="font-bold text-lg">Pea Shoots</h4>
-          <p class="text-sm mt-2">Mild, sweet taste – kid friendly.</p>
+          <p class="text-sm mt-2">Mild, sweet microgreens rich in protein and vitamins.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">💪 Protein</span>
+            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">👶 Kids Friendly</span>
+          </div>
         </div>
         <div class="bg-white p-6 rounded-2xl shadow">
           <h4 class="font-bold text-lg">Sunflower Shoots</h4>
-          <p class="text-sm mt-2">Crunchy texture for premium salads.</p>
+          <p class="text-sm mt-2">Crunchy microgreens packed with minerals and healthy fats.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">🥜 Minerals</span>
+            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">👶 Kids Friendly</span>
+          </div>
         </div>
         <div class="bg-white p-6 rounded-2xl shadow">
           <h4 class="font-bold text-lg">Radish</h4>
-          <p class="text-sm mt-2">Fast-growing greens with a spicy kick.</p>
+          <p class="text-sm mt-2">Fast-growing spicy microgreens supporting digestion and gut health.</p>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">🌿 Digestion</span>
+            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">🔥 Detox</span>
+          </div>
         </div>
       
         <div class="bg-white p-6 rounded-2xl shadow">
@@ -216,5 +237,27 @@
     © 2026 Aquila Greens • Grown with care in Whitefield
   </footer>
 
+<script>
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('#microgreens > div');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('bg-green-700','text-white'));
+      buttons.forEach(b => b.classList.add('bg-green-100','text-green-800'));
+      btn.classList.add('bg-green-700','text-white');
+      btn.classList.remove('bg-green-100','text-green-800');
+
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        if (filter === 'all' || card.innerHTML.toLowerCase().includes(filter)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
