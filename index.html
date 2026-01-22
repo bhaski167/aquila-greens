@@ -169,23 +169,34 @@
   </footer>
 
 <script>
-  const buttons = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('#microgreens > div');
+  // Safe filter logic – does not break UI
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('#microgreens > div');
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('bg-green-700','text-white'));
-      buttons.forEach(b => b.classList.add('bg-green-100','text-green-800'));
-      btn.classList.add('bg-green-700','text-white');
-      btn.classList.remove('bg-green-100','text-green-800');
+    // Ensure all cards are visible on load
+    cards.forEach(card => card.style.display = 'block');
 
-      const filter = btn.dataset.filter;
-      cards.forEach(card => {
-        if (filter === 'all' || card.innerHTML.toLowerCase().includes(filter)) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Button active state
+        buttons.forEach(b => {
+          b.classList.remove('bg-green-700','text-white');
+          b.classList.add('bg-green-100','text-green-800');
+        });
+        btn.classList.add('bg-green-700','text-white');
+        btn.classList.remove('bg-green-100','text-green-800');
+
+        const filter = btn.dataset.filter;
+
+        cards.forEach(card => {
+          if (filter === 'all') {
+            card.style.display = 'block';
+          } else {
+            const text = card.innerText.toLowerCase();
+            card.style.display = text.includes(filter) ? 'block' : 'none';
+          }
+        });
       });
     });
   });
