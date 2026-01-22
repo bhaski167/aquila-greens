@@ -10,12 +10,18 @@
 <body class="bg-gray-50 text-gray-800">
 
 <!-- Header -->
-<header class="bg-green-700 text-white">
-  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center gap-3">
-    <img src="logo.png" alt="Aquila Greens Logo" class="h-12 w-12 rounded-full bg-white p-1" />
-    <span class="text-xl font-bold">Aquila Greens</span>
+<header id="site-header" class="bg-green-700/95 backdrop-blur text-white fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center gap-4">
+    <img id="site-logo" src="logo.png" alt="Aquila Microgreens Logo" class="h-20 w-20 bg-white rounded-full p-1 transition-all duration-300" />
+    <div>
+      <div id="site-title" class="text-3xl font-bold transition-all duration-300">Aquila Microgreens</div>
+      <div class="text-sm text-green-100">Nutrition Amplified in Every Bite</div>
+    </div>
   </div>
 </header>
+
+<!-- Spacer for fixed header -->
+<div class="h-28"></div>
 
 <section class="py-16">
   <div class="max-w-7xl mx-auto px-4">
@@ -145,6 +151,26 @@
           : 'none';
       });
     });
+  });
+</script>
+
+<script>
+  const header = document.getElementById('site-header');
+  const logo = document.getElementById('site-logo');
+  const title = document.getElementById('site-title');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      logo.classList.remove('h-20','w-20');
+      logo.classList.add('h-14','w-14');
+      title.classList.remove('text-3xl');
+      title.classList.add('text-2xl');
+    } else {
+      logo.classList.remove('h-14','w-14');
+      logo.classList.add('h-20','w-20');
+      title.classList.remove('text-2xl');
+      title.classList.add('text-3xl');
+    }
   });
 </script>
 
