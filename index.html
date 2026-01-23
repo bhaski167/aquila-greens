@@ -48,7 +48,7 @@
 </header>
 
 <!-- Mobile Navigation -->
-<div id="mobile-menu" class="hidden bg-green-700 text-white md:hidden">
+<div id="mobile-menu" class="hidden bg-green-700 text-white md:hidden fixed top-20 left-0 right-0 z-40 transition-all duration-300">
   <div class="flex flex-col px-6 py-4 gap-4 text-sm font-semibold">
     <a href="#microgreens" class="hover:text-green-200">Microgreens</a>
     <a href="#combos" class="hover:text-green-200">Combos</a>
@@ -56,6 +56,7 @@
     <a href="#about" class="hover:text-green-200">About</a>
     <a href="#contact" class="hover:text-green-200">Contact</a>
   </div>
+</div>
 </div>
 
 <!-- Spacer for fixed header -->
@@ -398,13 +399,20 @@
 </script>
 
 <script>
-  // Mobile menu toggle
+  // Mobile menu toggle with polish
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
 
-  if (menuBtn) {
+  if (menuBtn && mobileMenu) {
     menuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
     });
   }
 </script>
