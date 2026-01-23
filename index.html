@@ -35,7 +35,7 @@
   </div>
 
   <!-- Top Navigation -->
-  <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+  <nav id="main-nav" class="hidden md:flex items-center gap-6 text-sm font-semibold">
   <a href="#microgreens" class="hover:text-green-200">Microgreens</a>
   <a href="#combos" class="hover:text-green-200">Combos</a>
   <a href="#subscriptions" class="hover:text-green-200">Subscriptions</a>
@@ -43,7 +43,20 @@
   <a href="#contact" class="hover:text-green-200">Contact</a>
 </nav>
   </div>
+  <!-- Mobile Menu Button -->
+  <button id="menu-btn" class="md:hidden absolute right-4 top-6 text-white text-2xl">☰</button>
 </header>
+
+<!-- Mobile Navigation -->
+<div id="mobile-menu" class="hidden bg-green-700 text-white md:hidden">
+  <div class="flex flex-col px-6 py-4 gap-4 text-sm font-semibold">
+    <a href="#microgreens" class="hover:text-green-200">Microgreens</a>
+    <a href="#combos" class="hover:text-green-200">Combos</a>
+    <a href="#subscriptions" class="hover:text-green-200">Subscriptions</a>
+    <a href="#about" class="hover:text-green-200">About</a>
+    <a href="#contact" class="hover:text-green-200">Contact</a>
+  </div>
+</div>
 
 <!-- Spacer for fixed header -->
 <div class="h-28"></div>
@@ -382,6 +395,18 @@
     btn.innerText = 'Order this';
     card.appendChild(btn);
   });
+</script>
+
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuBtn) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
 </script>
 
 </body>
