@@ -399,7 +399,7 @@
 </script>
 
 <script>
-  // Mobile menu toggle with polish
+  // Mobile menu toggle with auto-close on link click
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
 
@@ -408,7 +408,7 @@
       mobileMenu.classList.toggle('hidden');
     });
 
-    // Close menu on link click
+    // Auto close menu when any link is clicked
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
