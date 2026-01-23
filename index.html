@@ -11,6 +11,15 @@
   <style>
     html { scroll-behavior: smooth; }
   </style>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);} 
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
 </head>
 <body class="bg-gray-50 text-gray-800">
 
@@ -27,9 +36,12 @@
 
   <!-- Top Navigation -->
   <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
-    <a href="#about" class="hover:text-green-200">About</a>
-    <a href="#contact" class="hover:text-green-200">Contact</a>
-  </nav>
+  <a href="#microgreens" class="hover:text-green-200">Microgreens</a>
+  <a href="#combos" class="hover:text-green-200">Combos</a>
+  <a href="#subscriptions" class="hover:text-green-200">Subscriptions</a>
+  <a href="#about" class="hover:text-green-200">About</a>
+  <a href="#contact" class="hover:text-green-200">Contact</a>
+</nav>
   </div>
 </header>
 
@@ -41,8 +53,16 @@
 
     <!-- Hero -->
 <div class="text-center mb-12">
-  <img src="microgreens-hero.png" alt="Aquila Greens Microgreens" class="mx-auto max-w-full h-auto mb-6" />
+  <img src="microgreens-hero.png" alt="Aquila Microgreens" class="mx-auto max-w-full h-auto mb-6 drop-shadow-lg" loading="lazy" />
   <h2 class="text-3xl font-bold text-green-800 mb-2">Our Microgreens 🌱</h2>
+  <p class="text-sm text-gray-500">Harvested on order day • Delivered fresh</p>
+</div>
+
+<!-- Trust Strip -->
+<div class="flex flex-wrap justify-center gap-6 text-sm text-green-800 mb-10">
+  <span>✔ Grown in Whitefield</span>
+  <span>✔ Chemical-free</span>
+  <span>✔ Hygienic indoor setup</span>
 </div>
     <p class="text-center text-gray-600 mb-4">Fresh • Local • Harvested Weekly</p>
 
@@ -58,12 +78,12 @@
 
     <!-- Farm Gallery -->
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
-  <img src="farm1.jpg" class="rounded-xl shadow" alt="Home grown microgreens racks" />
-  <img src="farm2.jpg" class="rounded-xl shadow" alt="Fresh microgreens trays" />
-  <img src="farm3.jpg" class="rounded-xl shadow" alt="Harvest-ready microgreens" />
-  <img src="farm4.jpg" class="rounded-xl shadow" alt="Indoor microgreens setup" />
-  <img src="farm5.jpg" class="rounded-xl shadow" alt="Packed microgreens boxes" />
-  <img src="farm6.jpg" class="rounded-xl shadow" alt="Clean growing environment" />
+  <img loading="lazy" src="farm1.jpg" class="rounded-xl shadow" alt="Home grown microgreens racks" />
+  <img loading="lazy" src="farm2.jpg" class="rounded-xl shadow" alt="Fresh microgreens trays" />
+  <img loading="lazy" src="farm3.jpg" class="rounded-xl shadow" alt="Harvest-ready microgreens" />
+  <img loading="lazy" src="farm4.jpg" class="rounded-xl shadow" alt="Indoor microgreens setup" />
+  <img loading="lazy" src="farm5.jpg" class="rounded-xl shadow" alt="Packed microgreens boxes" />
+  <img loading="lazy" src="farm6.jpg" class="rounded-xl shadow" alt="Clean growing environment" />
 </div>
 
 <!-- Filters -->
@@ -93,6 +113,7 @@
 </div>
 
       <div class="card" data-tags="immunity kids">
+  <span class="inline-block mb-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">🧒 Kids Friendly</span>
   <h3 class="font-semibold text-lg">Broccoli</h3>
   <p class="mt-2 text-sm">Antioxidant-rich microgreens for immunity.</p>
   <p class="mt-3 font-semibold text-green-700">₹160 / 50g &nbsp; | &nbsp; ₹300 / 100g</p>
@@ -100,14 +121,8 @@
 </div>
 
       <div class="card" data-tags="protein kids">
-  <h3 class="font-semibold text-lg">Pea Shoots</h3>
-  <p class="mt-2 text-sm">Mild, sweet microgreens rich in plant protein.</p>
-  <p class="mt-3 font-semibold text-green-700">₹170 / 50g &nbsp; | &nbsp; ₹310 / 100g</p>
-  <p class="text-xs text-gray-500">Gym & kids favourite</p>
-</div>
-
-      <div class="card" data-tags="protein kids">
   <span class="inline-block mb-2 text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">⭐ Best Seller</span>
+  <span class="inline-block mb-2 ml-2 text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">💪 Protein Rich</span>
   <h3 class="font-semibold text-lg">Sunflower Shoots</h3>
   <p class="mt-2 text-sm">Crunchy shoots high in protein and minerals.</p>
   <p class="mt-3 font-semibold text-green-700">₹180 / 50g &nbsp; | &nbsp; ₹350 / 100g</p>
@@ -170,7 +185,7 @@
 
 <!-- Combo Pricing -->
 <!-- Combo Pricing -->
-<section class="bg-green-50 py-16">
+<section id="combos" class="bg-green-50 py-16">
   <div class="max-w-6xl mx-auto px-4 text-center">
     <h3 class="text-3xl font-bold text-green-800 mb-4">Value Combos 🌿</h3>
     <p class="text-gray-600 mb-8">Perfect combinations for daily health, fitness, and families.</p>
@@ -200,8 +215,9 @@
 </section>
 
 <!-- Subscription Highlight -->
-<section class="bg-white py-16">
+<section id="subscriptions" class="bg-white py-16">
   <div class="max-w-6xl mx-auto px-4 text-center">
+    <p class="text-sm text-green-700 mb-2">💡 Most customers save more with weekly subscriptions</p>
     <h3 class="text-3xl font-bold text-green-800 mb-4">Weekly Subscription Plans 📦</h3>
     <p class="text-gray-600 mb-2">Best value for regular consumers. Cancel anytime.</p>
     <p class="text-sm text-red-600 mb-8">⚠️ Limited weekly slots available</p>
